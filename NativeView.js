@@ -10,7 +10,7 @@ const propTypes = {
 const NativeView = ({ someRandomProp }) => (
     <RCTNativeView
         style={{ flex: 1 }}
-        someRandomProp={'just pass something so we can use setSomeRandomProp as our async action'}
+        someRandomProp={someRandomProp}
     />
 );
 

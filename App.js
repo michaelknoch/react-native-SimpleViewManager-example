@@ -1,43 +1,22 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-
-
+import { View } from 'react-native';
 import NativeView from './NativeView';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        
-        <NativeView />
+    state = {
+        randomString: null,
+    }
 
+    render() {
+        setTimeout(() => {
+            this.setState({randomString: 'pass something so we can use setSomeRandomProp as our async action'})
+        }, 200);
 
-      </View>
-    );
-  }
+        return (
+            <View style={{flex: 1}}>
+                <NativeView someRandomProp={this.state.randomString} />
+            </View>
+        );
+    }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  },
-});

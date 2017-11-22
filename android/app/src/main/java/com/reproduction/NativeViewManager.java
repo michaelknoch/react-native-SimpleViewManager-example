@@ -34,8 +34,14 @@ public class NativeViewManager extends SimpleViewManager<View> {
     public void setSomeRandomProp(View view, @Nullable String string) {
         Log.d("NativeViewManager", "setSomeRandomProp");
 
+        if (string == null) {
+            return;
+        }
+
         View anotherView = new View(view.getContext());
         anotherView.setBackgroundColor(Color.GREEN);
         nativeView.addView(anotherView);
+
+        
     }
 }
