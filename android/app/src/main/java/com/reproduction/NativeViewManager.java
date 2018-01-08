@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsoluteLayout;
 import android.widget.RelativeLayout;
 
 import com.facebook.react.uimanager.SimpleViewManager;
@@ -57,7 +56,7 @@ public class NativeViewManager extends SimpleViewManager<View> {
                 System.out.println(anotherView.getMeasuredWidth());
 
 
-            } // This is your code
+            }
         };
         mainHandler.post(myRunnable);
 
